@@ -29,3 +29,45 @@ Tujuan: Memudahkan proses pendaftaran event lari secara online tanpa harus melak
 Pain Point: Proses pendaftaran manual dinilai berpotensi terjadi kesalahan data peserta, serta berisiko menyebabkan kesalahan saat pengambilan racepack dan BIB. 
 
 Kebutuhan Utama: Membutuhkan sistem pendaftaran yang mudah digunakan untuk melakukan registrasi peserta, mengisi identitas pelari, melakukan pembayaran, memperoleh informasi nomor BIB dan kode pendaftaran, serta mempermudah proses pengambilan racepack tanpa kesalahan.
+
+
+
+SECTION 3 - Tech Stack
+Untuk menjaga kesederhanaan sistem, website POLI-CHROME RUN dibangun menggunakan teknologi dasar tanpa framework tambahan. Seluruh proses pengembangan difokuskan pada penggunaan HTML, CSS, JavaScript, PHP Native, dan MySQL agar sistem tetap ringan serta mudah dikembangkan. 
+
+# Front-End
+1. HTML5 
+Digunakan untuk membangun struktur halaman website seperti homepage, informasi event, formulir pendaftaran peserta, halaman pembayaran, halaman konfirmasi peserta, serta dashboard panitia. 
+2. CSS
+Digunakan untuk mengatur tampilan antarmuka website, termasuk layout halaman, navigasi, form input, tabel rekapitulasi, dan tampilan dashboard. 
+3. JavaScript
+Digunakan untuk validasi interaktif pada sisi pengguna, seperti pengecekan usia minimal peserta (12 tahun), validasi form pendaftaran, serta interaksi sederhana pada halaman. 
+
+# Back-End
+1. PHP-Native
+Digunakan untuk memproses seluruh logika sistem, meliputi:
+- Pengelolaan data pendaftaran peserta
+- Validasi NIK (1 NIK untuk 1 peserta)
+- Pembuatan nomor BIB dan kode pendaftaran
+- Pengelolaan status pembayaran
+- Proses handover racepack
+- Pengelolaan status pengambilan racepack
+- Rekapitulasi data peserta
+2. MySQL 
+Digunakan sebagai media penyimpanan seluruh data sistem, meliputi:
+- Data identitas peserta
+- Data kategori lari
+- Nomor BIB
+- Kode pendaftaran
+- Ukuran jersey
+- Status pembayaran
+- Data pengambilan racepack
+- Rekapitulasi peserta
+
+# Development Environment
+1. XAMPP
+Digunakan sebagai server lokal selama proses pengembangan karena menyediakan Apache, PHP, dan MySQL dalam satu lingkungan pengembangan. 
+2. phpMyAdmin
+Digunakan untuk mengelola database, membuat tabel, serta melakukan pengujian data peserta dan transaksi. 
+3. Visual Studio Code 
+Digunakan sebagai code editor untuk proses pengembangan antarmuka dan logika sistem.
