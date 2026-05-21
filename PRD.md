@@ -178,3 +178,12 @@ Data rekap dihasilkan dari proses perhitungan data pada tabel participants dan r
 - Racepack → diverifikasi oleh Admin
 - Payment → diverifikasi oleh Admin
 
+# Section 5 - Core Features
+## Homepage Event
+Menampilkan informasi event melalui fitur:
+1. Navbar, berisi home, facilities, registration, race guide, kerjasama, contact
+2. Hero Section
+3. Informasi Event, berisi Tanggal Pelaksanaan, Lokasi, Kategori Lari, Facilities ( Jersey, Finisher Medal, Goodie Bag, Refreshment, Water Station, Doorprize, BIB)
+4. Tombol Pendaftaran, ketika dipilih sistem mengarahkan ke halaman formulir pendaftaran
+
+## Formulir Pendaftaran
