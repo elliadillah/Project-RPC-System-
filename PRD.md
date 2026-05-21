@@ -228,7 +228,7 @@ Menampilkan informasi event melalui fitur:
 9. Sistem mengarahkan peserta ke halaman pembayaran
 
 
-**Flow: Peserta Melakukan Pembayaran **
+**Flow: Peserta Melakukan Pembayaran**
 1. Peserta membuka halaman pembayaran
 2. Sistem menampilkan:
    - Nama peserta
@@ -265,7 +265,7 @@ Menampilkan informasi event melalui fitur:
 8. Admin yang melakukan handover
 
 
-**Flow: Panitia Melihat Rekap Peserta **
+**Flow: Panitia Melihat Rekap Peserta**
 1. Panitia membuka menu My Transaction / Rekap
 2. Sistem menghitung seluruh data peserta
    Sistem menampilkan:
