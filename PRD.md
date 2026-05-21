@@ -15,14 +15,15 @@ Web ini menyediakan alat manajemen operasional. Panitia dibekali fitur untuk mem
 
 # SECTION 2 - User personas
 
-Penyelenggara Event
+**Penyelenggara Event**
 
 Tujuan: Mengelola proses pendaftaran peserta event lari secara mandiri dan terintegrasi melalui sistem online agar proses administrasi menjadi lebih efektif dan terorganisir.
 
 Pain Point: Selama ini proses pendaftaran dan pendataan peserta masih dilakukan secara manual menggunakan formulir, kertas, atau spreadsheet secara manual menggunakan formulir, kertas, atau spreadsheet sehingga berisiko menyebabkan duplikasi data peserta, kesalahan pencatatan identitas, serta kesalahan saat proses serah terima racepack dan BIB. 
 
 Kebutuhan Utama: Membutuhkan sistem terpusat yang dapat digunakan untuk mengelola pendaftaran peserta, menyimpan identitas pelari, melakukan proses handover racepack, serta menghasilkan rekapitulasi peserta secara otomatis.
-Peserta (Calon Pelari)
+
+**Peserta (Calon Pelari)**
 
 Tujuan: Memudahkan proses pendaftaran event lari secara online tanpa harus melakukan pencatatan dan registrasi secara manual
 
