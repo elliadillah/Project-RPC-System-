@@ -1,7 +1,7 @@
 # Project-RPC-System-
 # SECTION 1 - Project Overview 
 
-Apa yang dibangun: Website pendaftaran event lari yang digunakan untuk mengelola proses peserta mulai dari registrasi hingga pengambilan racepack.
+**Apa yang dibangun: Website pendaftaran event lari yang digunakan untuk mengelola proses peserta mulai dari registrasi hingga pengambilan racepack.
 
 Masalah yang diselesaikan: Menyelesaikan permasalahan penyelenggara yang kesulitan untuk melakukan dan mengidentifikasi identitas, dan nomor pendaftaran peserta secara manual dalam proses pemberian race pack. Web ini menyelesaikan kerumitan pencatatan manual di kertas/spreadsheet, mencegah kecurangan data ganda, serta mengatasi risiko salah serah terima ukuran jersey dan nomor BIB melalui verifikasi kode terpusat. 
 
