@@ -283,7 +283,7 @@ Menampilkan informasi event melalui fitur:
    - Racepack diserahkan
 
 
-## Section 8 — Non-functional Requirements
+## SECTION 8 — Non-functional Requirements
 
 ### Non-functional Requirements
 
