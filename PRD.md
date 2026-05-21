@@ -187,3 +187,97 @@ Menampilkan informasi event melalui fitur:
 4. Tombol Pendaftaran, ketika dipilih sistem mengarahkan ke halaman formulir pendaftaran
 
 ## Formulir Pendaftaran
+
+
+
+
+
+
+
+# SECTION 6 - User Flows 
+**Flow: Peserta Melakukan Pendaftaran Event **
+1. Peserta membuka halaman utama POLI-CHROME RUN
+2. Peserta melihat informasi event:
+   - Jadwal event
+   - Lokasi
+   - Benefit peserta
+   - Kategori lari
+3. Peserta menekan tombol Daftar Sekarang
+4. Sistem membuka halaman formulir pendaftaran
+5. Peserta mengisi data:
+   - Nama lengkap
+   - Nama pada BIB
+   - Email
+   - Nomor telepon
+   - Tanggal lahir
+   - NIK
+   - Kontak darurat
+   - Riwayat penyakit
+   - Ukuran jersey
+   - Kategori lari
+6. Sistem melakukan validasi:
+   - Cek usia minimal 12 tahun
+   - Cek NIK sudah pernah dipakai atau belum
+7. Jika data tidak valid:
+   - Sistem menampilkan pesan error
+   - Peserta diminta memperbaiki data
+8. Jika data valid:
+   - Sistem menyimpan data peserta
+   - Sistem membuat nomor BIB otomatis
+   - Sistem membuat kode pendaftaran
+9. Sistem mengarahkan peserta ke halaman pembayaran
+
+
+**Flow: Peserta Melakukan Pembayaran **
+1. Peserta membuka halaman pembayaran
+2. Sistem menampilkan:
+   - Nama peserta
+   - Kategori lari
+   - Nominal pembayaran
+   - Peserta memilih metode pembayaran
+   - Peserta mengunggah bukti pembayaran
+3. Jika pembayaran valid:Sistem menampilkan:
+   - Nama peserta
+   - Nama pada BIB
+   - Nomor BIB
+   - Kategori
+
+**Flow: Panitia Melakukan Handover Racepack**
+1. Panitia login ke dashboard
+2. Panitia membuka menu Handover BIB
+3. Panitia memasukkan kode pendaftaran peserta
+4. Sistem mencari data peserta
+   Sistem menampilkan:
+   - Nama lengkap
+   - Nama pada BIB
+   - Email
+   - Ukuran jersey
+   - Nomor BIB
+   - Kategori lari
+   - Status pengambilan
+5. Sistem melakukan pengecekan:
+   Jika status: Not Taken
+   maka tombol: Konfirmasi Pengambilan ditampilkan
+6. Panitia memilih tombol konfirmasi
+   Sistem mengubah status menjadi: Taken
+   Sistem menyimpan:
+7. Waktu pengambilan
+8. Admin yang melakukan handover
+
+
+**Flow: Panitia Melihat Rekap Peserta **
+1. Panitia membuka menu My Transaction / Rekap
+2. Sistem menghitung seluruh data peserta
+   Sistem menampilkan:
+   - Total peserta
+   - Total peserta kategori 5K
+   - Total peserta kategori 10K
+   - Total racepack sudah diambil
+   - Total racepack belum diambil
+   - Total peserta aktif
+   - Total peserta belum aktif
+3. Sistem memperbarui data secara otomatis ketika:
+   - Ada peserta baru
+   - Pembayaran diverifikasi
+   - Racepack diserahkan
+
