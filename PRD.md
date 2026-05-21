@@ -282,3 +282,45 @@ Menampilkan informasi event melalui fitur:
    - Pembayaran diverifikasi
    - Racepack diserahkan
 
+
+## Section 8 — Non-functional Requirements
+
+### Non-functional Requirements
+
+#### Security
+
+* Semua akun peserta, admin, dan organizer wajib menggunakan sistem login yang aman
+* Role-based authorization diterapkan sesuai hak akses pengguna
+* Data peserta seperti nama, email, dan nomor telepon disimpan secara aman
+* Seluruh form registrasi memiliki input validation untuk mencegah invalid data
+* Pembayaran peserta menggunakan sistem payment gateway yang aman dan terenkripsi
+
+#### Performance
+
+* Website mampu menangani lonjakan traffic saat periode pendaftaran dibuka
+* Proses registrasi dan pembayaran peserta berjalan secara real-time
+* Database indexing diterapkan pada kolom:
+
+  * participant_id
+  * event_id
+  * category_id
+  * payment_status
+* Halaman event dan form registrasi harus memiliki loading time yang cepat dan responsif
+
+#### Reliability
+
+* Sistem tetap stabil saat diakses banyak peserta secara bersamaan
+* Data registrasi peserta tersimpan otomatis setelah pembayaran berhasil
+* Sistem memiliki backup database untuk mengurangi risiko kehilangan data
+
+#### Scalability
+
+* Sistem dapat digunakan untuk penambahan event lari lain di masa mendatang
+* Platform mampu menangani peningkatan jumlah peserta tanpa penurunan performa
+
+#### Code Quality
+
+* Menggunakan clean architecture dan modular coding
+* Business logic dipisahkan ke dalam Service Layer
+* Tidak ada credential atau API key yang ditulis langsung di source code (menggunakan environment variables)
+* Struktur kode mudah dikembangkan dan dipelihara untuk fitur event berikutnya
