@@ -195,7 +195,7 @@ Menampilkan informasi event melalui fitur:
 
 
 # SECTION 6 - User Flows 
-**Flow: Peserta Melakukan Pendaftaran Event **
+**Flow: Peserta Melakukan Pendaftaran Event**
 1. Peserta membuka halaman utama POLI-CHROME RUN
 2. Peserta melihat informasi event:
    - Jadwal event
