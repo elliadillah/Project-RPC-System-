@@ -318,6 +318,8 @@ Menampilkan informasi event melalui fitur:
 * Sistem dapat digunakan untuk penambahan event lari lain di masa mendatang
 * Platform mampu menangani peningkatan jumlah peserta tanpa penurunan performa
 
+* 
+
 #### Code Quality
 
 * Menggunakan clean architecture dan modular coding
