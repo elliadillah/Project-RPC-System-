@@ -34,45 +34,12 @@ Web ini menyediakan alat manajemen operasional. Panitia dibekali fitur untuk mem
 
 
 # SECTION 3 - Tech Stack
-Untuk menjaga kesederhanaan sistem, website POLI-CHROME RUN dibangun menggunakan teknologi dasar tanpa framework tambahan. Seluruh proses pengembangan difokuskan pada penggunaan HTML, CSS, JavaScript, PHP Native, dan MySQL agar sistem tetap ringan serta mudah dikembangkan. 
-
-**A. Front-End**
-1. HTML5 
-Digunakan untuk membangun struktur halaman website seperti homepage, informasi event, formulir pendaftaran peserta, halaman pembayaran, halaman konfirmasi peserta, serta dashboard panitia. 
-2. CSS
-Digunakan untuk mengatur tampilan antarmuka website, termasuk layout halaman, navigasi, form input, tabel rekapitulasi, dan tampilan dashboard. 
-3. JavaScript
-Digunakan untuk validasi interaktif pada sisi pengguna, seperti pengecekan usia minimal peserta (12 tahun), validasi form pendaftaran, serta interaksi sederhana pada halaman. 
-
-**B. Back-End**
-**1. PHP-Native**
-Digunakan untuk memproses seluruh logika sistem, meliputi:
-- Pengelolaan data pendaftaran peserta
-- Validasi NIK (1 NIK untuk 1 peserta)
-- Pembuatan nomor BIB dan kode pendaftaran
-- Pengelolaan status pembayaran
-- Proses handover racepack
-- Pengelolaan status pengambilan racepack
-- Rekapitulasi data peserta
-**2. MySQL **
-Digunakan sebagai media penyimpanan seluruh data sistem, meliputi:
-- Data identitas peserta
-- Data kategori lari
-- Nomor BIB
-- Kode pendaftaran
-- Ukuran jersey
-- Status pembayaran
-- Data pengambilan racepack
-- Rekapitulasi peserta
-
-**C. Development Environment**
-**1. XAMPP**
-Digunakan sebagai server lokal selama proses pengembangan karena menyediakan Apache, PHP, dan MySQL dalam satu lingkungan pengembangan. 
-**2. phpMyAdmin**
-Digunakan untuk mengelola database, membuat tabel, serta melakukan pengujian data peserta dan transaksi. 
-**3. Visual Studio Code **
-Digunakan sebagai code editor untuk proses pengembangan antarmuka dan logika sistem.
-
+Backend            : Laravel 12
+Frontend           : Blade + Tailwind CSS4
+Database           : My SQL
+Authentication     : Laravel Breeze
+Dashboard UI       : Filament PHP 
+Development Tools  : VS Code, Composer, XAMPP
 
 # SECTION 4 — Data Models
 
@@ -180,115 +147,84 @@ Data rekap dihasilkan dari proses perhitungan data pada tabel participants dan r
 - Payment → diverifikasi oleh Admin
 
 # Section 5 - Core Features
-## Homepage Event
-Menampilkan informasi event melalui fitur:
-1. Navbar, berisi home, facilities, registration, race guide, kerjasama, contact
-2. Hero Section
-3. Informasi Event, berisi Tanggal Pelaksanaan, Lokasi, Kategori Lari, Facilities ( Jersey, Finisher Medal, Goodie Bag, Refreshment, Water Station, Doorprize, BIB)
-4. Tombol Pendaftaran, ketika dipilih sistem mengarahkan ke halaman formulir pendaftaran
+**Event Information Page**
+Peserta dapat melihat informasi lengkap event seperti kategori lari, jadwal, lokasi, benefit peserta, dan detail racepack sebelum melakukan pendaftaran.
 
-## Formulir Pendaftaran
+**Online Registration System**
+Peserta dapat mengisi formulir pendaftaran secara online dengan validasi otomatis:
+1. Minimal usia 12 tahun.
+2. 1 NIK hanya untuk 1 peserta.
+3. Pemilihan kategori 5K atau 10K.
+4. Pemilihan ukuran jersey.
 
+Sistem otomatis membuat:
+1. Nomor BIB
+2. Kode registrasi peserta
 
+**Payment & Registration Confirmation**
+Setelah registrasi, peserta diarahkan ke halaman pembayaran. Setelah pembayaran berhasil diverifikasi, peserta memperoleh:
 
+1. Status peserta aktif
+2. Nomor BIB
+3. Kode pendaftaran
+4. Bukti registrasi yang dapat diunduh
 
+**Racepack Handover Dashboard**
+Panitia dapat memasukkan kode registrasi peserta untuk memverifikasi data pengambilan racepack.
+Sistem menampilkan:
+1. Nama peserta
+2. Nama BIB
+3. Kategori lari
+4. Ukuran jersey
+5. Status pengambilan
+Panitia dapat mengubah status menjadi “Taken” setelah racepack diserahkan.
 
-
+**Participant Recap Dashboard**
+Dashboard menampilkan data rekapitulasi secara real-time:
+1. Total peserta
+2. Total kategori 5K dan 10K
+3. Total racepack sudah diambil
+4. Total racepack belum diambil
+5. Total peserta aktif
 
 # SECTION 6 - User Flows 
-**Flow: Peserta Melakukan Pendaftaran Event**
-1. Peserta membuka halaman utama POLI-CHROME RUN
-2. Peserta melihat informasi event:
-   - Jadwal event
-   - Lokasi
-   - Benefit peserta
-   - Kategori lari
-3. Peserta menekan tombol Daftar Sekarang
-4. Sistem membuka halaman formulir pendaftaran
-5. Peserta mengisi data:
-   - Nama lengkap
-   - Nama pada BIB
-   - Email
-   - Nomor telepon
-   - Tanggal lahir
-   - NIK
-   - Kontak darurat
-   - Riwayat penyakit
-   - Ukuran jersey
-   - Kategori lari
-6. Sistem melakukan validasi:
-   - Cek usia minimal 12 tahun
-   - Cek NIK sudah pernah dipakai atau belum
-7. Jika data tidak valid:
-   - Sistem menampilkan pesan error
-   - Peserta diminta memperbaiki data
-8. Jika data valid:
-   - Sistem menyimpan data peserta
-   - Sistem membuat nomor BIB otomatis
-   - Sistem membuat kode pendaftaran
-9. Sistem mengarahkan peserta ke halaman pembayaran
+**Participant Registration Flow**
+1. Peserta membuka homepage.
+2. Peserta melihat informasi event.
+3. Peserta klik tombol daftar.
+4. Sistem menampilkan formulir registrasi.
+5. Peserta mengisi data diri.
+6. Sistem memvalidasi usia dan NIK.
+7. Sistem membuat nomor BIB dan kode registrasi.
+8. Peserta diarahkan ke pembayaran.
+9. Setelah pembayaran berhasil, status peserta menjadi aktif.
 
+**Racepack Handover Flow**
+1. Panitia login ke dashboard.
+2. Panitia membuka menu handover.
+3. Panitia memasukkan kode registrasi.
+4. Sistem menampilkan data peserta.
+5. Panitia menyerahkan racepack.
+6. Sistem mengubah status menjadi “Taken”.
 
-**Flow: Peserta Melakukan Pembayaran**
-1. Peserta membuka halaman pembayaran
-2. Sistem menampilkan:
-   - Nama peserta
-   - Kategori lari
-   - Nominal pembayaran
-   - Peserta memilih metode pembayaran
-   - Peserta mengunggah bukti pembayaran
-3. Jika pembayaran valid:Sistem menampilkan:
-   - Nama peserta
-   - Nama pada BIB
-   - Nomor BIB
-   - Kategori
+**Participant Recap Flow**
+1. Panitia membuka dashboard rekap.
+2. Sistem menghitung data peserta secara otomatis.
+3. Dashboard menampilkan total peserta dan status racepack secara real-time.
 
-**Flow: Panitia Melakukan Handover Racepack**
-1. Panitia login ke dashboard
-2. Panitia membuka menu Handover BIB
-3. Panitia memasukkan kode pendaftaran peserta
-4. Sistem mencari data peserta
-   Sistem menampilkan:
-   - Nama lengkap
-   - Nama pada BIB
-   - Email
-   - Ukuran jersey
-   - Nomor BIB
-   - Kategori lari
-   - Status pengambilan
-5. Sistem melakukan pengecekan:
-   Jika status: Not Taken
-   maka tombol: Konfirmasi Pengambilan ditampilkan
-6. Panitia memilih tombol konfirmasi
-   Sistem mengubah status menjadi: Taken
-   Sistem menyimpan:
-7. Waktu pengambilan
-8. Admin yang melakukan handover
-
-
-**Flow: Panitia Melihat Rekap Peserta**
-1. Panitia membuka menu My Transaction / Rekap
-2. Sistem menghitung seluruh data peserta
-   Sistem menampilkan:
-   - Total peserta
-   - Total peserta kategori 5K
-   - Total peserta kategori 10K
-   - Total racepack sudah diambil
-   - Total racepack belum diambil
-   - Total peserta aktif
-   - Total peserta belum aktif
-3. Sistem memperbarui data secara otomatis ketika:
-   - Ada peserta baru
-   - Pembayaran diverifikasi
-   - Racepack diserahkan
-
+# SECTION 7 - Out of Scope
+Fitur berikut belum termasuk dalam versi pertama sistem:
+1. Live race tracking GPS
+2. Online leaderboard hasil lomba
+3. Integrasi payment gateway otomatis
+4. QR code check-in
+5. Multi-event management
+6. Mobile application
+7. Email dan WhatsApp notification automation
 
 ## SECTION 8 — Non-functional Requirements
-
 ### Non-functional Requirements
-
 #### Security
-
 * Semua akun peserta, admin, dan organizer wajib menggunakan sistem login yang aman
 * Role-based authorization diterapkan sesuai hak akses pengguna
 * Data peserta seperti nama, email, dan nomor telepon disimpan secara aman
@@ -296,11 +232,9 @@ Menampilkan informasi event melalui fitur:
 * Pembayaran peserta menggunakan sistem payment gateway yang aman dan terenkripsi
 
 #### Performance
-
 * Website mampu menangani lonjakan traffic saat periode pendaftaran dibuka
 * Proses registrasi dan pembayaran peserta berjalan secara real-time
 * Database indexing diterapkan pada kolom:
-
   * participant_id
   * event_id
   * category_id
@@ -308,20 +242,15 @@ Menampilkan informasi event melalui fitur:
 * Halaman event dan form registrasi harus memiliki loading time yang cepat dan responsif
 
 #### Reliability
-
 * Sistem tetap stabil saat diakses banyak peserta secara bersamaan
 * Data registrasi peserta tersimpan otomatis setelah pembayaran berhasil
 * Sistem memiliki backup database untuk mengurangi risiko kehilangan data
 
 #### Scalability
-
 * Sistem dapat digunakan untuk penambahan event lari lain di masa mendatang
-* Platform mampu menangani peningkatan jumlah peserta tanpa penurunan performa
-
-* 
+* Platform mampu menangani peningkatan jumlah peserta tanpa penurunan performa 
 
 #### Code Quality
-
 * Menggunakan clean architecture dan modular coding
 * Business logic dipisahkan ke dalam Service Layer
 * Tidak ada credential atau API key yang ditulis langsung di source code (menggunakan environment variables)
