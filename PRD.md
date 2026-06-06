@@ -45,7 +45,6 @@ Development Tools  : VS Code, Composer, XAMPP
 
 **1. Admins**
 Digunakan untuk menyimpan data panitia atau penyelenggara yang memiliki akses ke dashboard pengelolaan peserta dan racepack. 
-- Id
 - Name
 - Email
 - Password
@@ -55,7 +54,7 @@ Digunakan untuk menyimpan data panitia atau penyelenggara yang memiliki akses ke
   
 **2. Events**
 Digunakan untuk menyimpan informasi event lari yang diselenggarakan.
--  Id
+- Id
 - Event_name
 - Slug
 - Description
@@ -73,16 +72,13 @@ Keterangan:
 - registration_code digunakan untuk pengambilan racepack
 - participant_status menunjukkan status peserta setelah pembayaran
 
-- Id
+- Id 
 - event_id (FK: events)
 - Full_name
 - Bib_name
 - Email
 - Phone_number
-- Birth_date
-- NIK (one participants)
-- Emergency_contact
-- Medical_history (nullable)
+- Age
 - Jersey_size: enum('S', 'M', 'L', 'XL')
 - Category: enum('5K', '10K')
 - BIB_number (unique)
@@ -195,9 +191,11 @@ Dashboard menampilkan data rekapitulasi secara real-time:
 4. Sistem menampilkan formulir registrasi.
 5. Peserta mengisi data diri.
 6. Sistem memvalidasi usia dan NIK.
-7. Sistem membuat nomor BIB dan kode registrasi.
+7. Peserta memilih kategori lari (5K atau 10K)
 8. Peserta diarahkan ke pembayaran.
 9. Setelah pembayaran berhasil, status peserta menjadi aktif.
+10. Sistem menampilkan kode nomor BIB dan kode registrasi.
+   
 
 **Racepack Handover Flow**
 1. Panitia login ke dashboard.
