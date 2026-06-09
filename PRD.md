@@ -89,20 +89,8 @@ Keterangan:
 **4. Payments**
 Digunakan untuk menyimpan data pembayaran peserta.
 Keterangan:
-a. Status awal peserta adalah pending
-b. Setelah pembayaran diverifikasi, status berubah menjadi paid
-c. Peserta kemudian menjadi active
+Tersedia kolom File Upload untuk mengunggah bukti transaksi pembayaran calon peserta lari sesuai kategori (5K & 10K), keterangan informasi nominal pembayaran yang harus dibayarkan setiap kategori lari tersedia di samping form registration.
 
-- Id
-- Participant_id (FK: participants)
-- Invoice_number (unique)
-- Amount
-- Payment_method
-- Payment_proof
-- Payment_status: enum('pending', 'paid', 'failed')
-- Payment_date (nullable)
-- Verified_by (FK: admins)
-- Timestamps
   
 **5. Racepacks**
 Digunakan untuk mengelola proses serah terima BIB dan racepack.
@@ -158,7 +146,7 @@ Sistem otomatis membuat:
 2. Kode registrasi peserta
 
 **Payment & Registration Confirmation**
-Setelah registrasi, peserta diarahkan ke halaman pembayaran. Setelah pembayaran berhasil diverifikasi, peserta memperoleh:
+Setelah registrasi, peserta harus melakukan pembayaran sesuai dengan kategori lari. Setelah pembayaran berhasil diverifikasi, peserta memperoleh:
 
 1. Status peserta aktif
 2. Nomor BIB
