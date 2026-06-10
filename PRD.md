@@ -89,7 +89,7 @@ Keterangan:
 **4. Payments**
 Digunakan untuk menyimpan data pembayaran peserta.
 Keterangan:
-Tersedia kolom File Upload untuk mengunggah bukti transaksi pembayaran calon peserta lari sesuai kategori (5K & 10K), keterangan informasi nominal pembayaran yang harus dibayarkan setiap kategori lari tersedia di samping form registration.
+Tersedia kolom File Upload untuk mengunggah bukti transaksi pembayaran calon peserta lari sesuai kategori (5K & 10K)
 
   
 **5. Racepacks**
